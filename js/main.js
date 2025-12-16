@@ -6,7 +6,7 @@
 // GLOBAL VARIABLES
 // ============================================
 let cart = [];
-const WHATSAPP_NUMBER = '+447123456789'; // Change this to your actual WhatsApp number
+const WHATSAPP_NUMBER = '+441908040384'; // Updated to SKYE shop WhatsApp number
 
 // ============================================
 // DOM CONTENT LOADED

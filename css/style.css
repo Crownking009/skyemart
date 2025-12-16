@@ -7,12 +7,12 @@
     /* Brand Colors - Bright African-inspired palette */
     --primary-color: #FF6B35;        /* Vibrant Orange */
     --secondary-color: #F7931E;      /* Golden Orange */
-    --accent-color: #ad027fff;         /* Turquoise */
-    --success-color: #89076fff;        /* Green */
+    --accent-color: #3b0c83ff;         /* Turquoise */
+    --success-color: #3b0c83ff;        /* Green */
     --danger-color: #E74C3C;         /* Red */
     
     /* Neutral Colors */
-    --dark: #89076fff;
+    --dark: #3b0c83ff;
     --dark-light: #2D2D44;
     --text-dark: #333333;
     --text-light: #666666;
@@ -22,7 +22,7 @@
     --border-color: #E0E0E0;
     
     /* Gradient */
-    --gradient-primary: linear-gradient(135deg, #fa5ffaff 0%, #e15be1ff 100%);
+    --gradient-primary: linear-gradient(135deg, #9b62ecff 0%, #9968DF 100%);
     --gradient-secondary: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
     --gradient-overlay: linear-gradient(135deg, rgba(255, 107, 53, 0.9) 0%, rgba(247, 147, 30, 0.85) 100%);
     
@@ -155,7 +155,7 @@ p {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: var(--dark);
     color: var(--white);
     box-shadow: var(--shadow-md);
 }
@@ -181,6 +181,10 @@ p {
     background: var(--white);
     color: var(--primary-color);
     box-shadow: var(--shadow-md);
+}
+
+.cta-buttons {
+    color: var(--dark);
 }
 
 .btn-white:hover {
@@ -240,9 +244,9 @@ p {
 }
 
 .logo-text small {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-light);
+    color: var(--dark);
     font-family: var(--font-primary);
 }
 
@@ -702,13 +706,21 @@ p {
 }
 
 .section-title {
-    color: var(--text-dark);
+    color: var(--dark);
     margin-bottom: var(--spacing-sm);
+}
+
+.section-t {
+    color: var(--white);
+}
+
+.section-subt {
+    color: var(--white);
 }
 
 .section-subtitle {
     font-size: 1.125rem;
-    color: var(--text-light);
+    color: var(--dark);
     max-width: 600px;
     margin: 0 auto;
 }
@@ -788,7 +800,7 @@ p {
 /* === FEATURED PRODUCTS SECTION === */
 .featured-products {
     padding: var(--spacing-xxl) 0;
-    background: var(--light-bg);
+    background: #9968DF;
 }
 
 .products-grid {
@@ -879,7 +891,7 @@ p {
 
 .btn-add-cart {
     width: 100%;
-    background: var(--gradient-primary);
+    background: var(--dark);
     color: var(--white);
     padding: 0.875rem;
     border-radius: var(--radius-md);
@@ -925,12 +937,14 @@ p {
 .cta-text h2 {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-md);
+    color: var(--white);
 }
 
 .cta-text p {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-lg);
     opacity: 0.95;
+    color: var(--white);
 }
 
 /* === FOOTER === */
