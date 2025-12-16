@@ -31,8 +31,8 @@
     <link rel="canonical" href="https://www.skyeafricansupermarket.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo40x40.png">
+    <link rel="apple-touch-icon" href="images/logo180x180.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
@@ -193,7 +193,7 @@
             <div class="categories-grid">
                 <a href="shop.html?category=fresh-produce" class="category-card fade-in-up" data-delay="0.1">
                     <div class="category-image">
-                        <img src="images/icons/produce.svg" alt="Fresh Produce" loading="lazy">
+                        <img src="images/fruit & veg.jpg" alt="Fresh Produce" loading="lazy">
                     </div>
                     <h3>Fresh Produce</h3>
                     <p>Fruits & Vegetables</p>
@@ -289,6 +289,109 @@
             </div>
         </div>
     </section>
+    <!-- Client Reviews (added) -->
+    <section class="reviews-section" aria-label="Customer reviews" data-delay="4500">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real reviews from shoppers who love our taste of Africa</p>
+            </div>
+
+            <div class="reviews-wrap">
+                <div class="reviews-slider">
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">SG</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Sarah G.</strong>
+                                    <span class="review-location">London</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Amazing selection and fast delivery — genuine flavours and friendly service. Highly recommend!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">MK</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Michael K.</strong>
+                                    <span class="review-location">Birmingham</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Great prices and authentic products — I find everything I need for family recipes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">AO</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Aisha O.</strong>
+                                    <span class="review-location">Manchester</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Friendly staff and authentic produce. My go-to for special ingredients.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">TB</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Tunde B.</strong>
+                                    <span class="review-location">Leeds</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Top quality and quick service. The spices are excellent — very fresh.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">EN</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Emma N.</strong>
+                                    <span class="review-location">Croydon</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Delicious products and helpful delivery updates. Excellent experience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-avatar">OJ</div>
+                            <div class="review-body">
+                                <div class="review-meta">
+                                    <strong>Olu J.</strong>
+                                    <span class="review-location">Watford</span>
+                                </div>
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">Fantastic range of products I can't find elsewhere. Great value.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-controls">
+                    <button class="reviews-prev" aria-label="Previous review">‹</button>
+                    <div class="reviews-dots" role="tablist"></div>
+                    <button class="reviews-next" aria-label="Next review">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Featured Products Section -->
     <section class="featured-products">
@@ -374,11 +477,11 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>United Kingdom</span>
+                            <span> 16 The Square, Wolverton, Milton Keynes, MK12 5DG.</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>+44 XXX XXX XXXX</span>
+                            <span>01908040384</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
@@ -410,6 +513,15 @@
     <!-- Scripts -->
     <script src="js/firebase-config.js"></script>
     <script src="js/hero-carousel.js"></script>
+    <script src="js/reviews.js"></script>
+    <!-- WhatsApp floating button (set your number in data-number) -->
+    <a id="whatsappBtn" class="whatsapp-float" data-number="" data-text="Hello! I'm interested in placing an order." aria-label="Chat on WhatsApp" href="#">
+        <svg class="wa-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20.52 3.48A11.86 11.86 0 0 0 12 0C5.37 0 .02 4.87.02 11.04c0 1.94.5 3.83 1.45 5.5L0 24l7.78-1.99A11.88 11.88 0 0 0 12 22c6.63 0 11.99-4.87 11.99-11.04 0-2.97-1.16-5.74-3.47-7.48z" fill="#fff"/>
+            <path d="M17.15 14.04c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.09-.16.18-.32.21-.59.07-.27-.14-1.13-.42-2.15-1.33-.79-.7-1.32-1.57-1.48-1.84-.16-.27-.02-.42.12-.56.12-.12.27-.31.4-.47.14-.16.18-.28.27-.46.09-.18.05-.33-.02-.47-.07-.14-.61-1.48-.84-2.03-.22-.52-.45-.45-.61-.46l-.52-.01c-.18 0-.47.07-.72.33-.25.27-.95.93-.95 2.26 0 1.33.98 2.62 1.12 2.8.14.18 1.94 3.02 4.7 4.23 1.64.71 2.46.95 3.32.96.88.01 1.44-.28 1.97-.51.54-.23 1.64-.67 1.88-1.17.24-.5.24-.93.17-1.02-.07-.09-.25-.14-.53-.28z" fill="#25D366"/>
+        </svg>
+    </a>
+    <script src="js/whatsapp-float.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
 </body>

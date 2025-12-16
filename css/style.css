@@ -227,7 +227,7 @@ p {
 }
 
 .logo img {
-    height: 50px;
+    height: 80px;
     width: auto;
 }
 
@@ -343,6 +343,16 @@ p {
     margin-top: 82px;
 }
 
+/* About page hero uses the primary gradient to create a warm brand header */
+.hero-about {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.hero-about .hero-overlay { /* soften existing overlay so gradient shows */
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
+}
+
 /* .hero-overlay {
     position: absolute;
     top: 0;
@@ -434,6 +444,124 @@ p {
 
 .hero-text {
     max-width: 700px;
+}
+
+/* === REVIEWS SECTION === */
+.reviews-section {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(180deg, rgba(250,250,250,0.02), rgba(255,255,255,0.02));
+}
+.reviews-wrap { position: relative; margin-top: var(--spacing-sm); overflow: hidden; }
+.reviews-slider {
+    display: flex;
+    gap: 18px;
+    will-change: transform;
+    transition: transform 600ms cubic-bezier(.22,.9,.24,1);
+}
+.review-slide { flex: 0 0 33.333%; box-sizing: border-box; padding: 8px; transition: transform 0.5s ease, opacity 0.5s ease; }
+.review-card {
+    background: linear-gradient(180deg, #ffffff, #fff9f5);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    transform-origin: center;
+}
+.review-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--gradient-secondary);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+.review-body { flex: 1; }
+.review-meta { display: flex; gap: 8px; align-items: baseline; }
+.review-meta strong { font-size: 1rem; }
+.review-location { color: var(--text-lighter); font-size: 0.9rem; }
+.review-stars { color: #FFB400; margin: 6px 0; font-size: 0.95rem; }
+.review-text { color: var(--text-dark); opacity: 0.95; }
+
+/* Active/highlighted slide styling */
+.review-slide.active .review-card { transform: translateY(-6px) scale(1.03); box-shadow: var(--shadow-lg); }
+
+/* Controls */
+.reviews-controls { display:flex; align-items:center; justify-content:center; gap:12px; margin-top: 14px; }
+.reviews-prev, .reviews-next { background: var(--dark); color: #fff; border-radius: 8px; width: 36px; height: 36px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; border:none; }
+.reviews-dots { display:flex; gap:8px; }
+.reviews-dot { width:10px; height:10px; border-radius:50%; background: rgba(0,0,0,0.12); cursor:pointer; border:none; }
+.reviews-dot.active { background: var(--primary-color); box-shadow: var(--shadow-sm); transform: scale(1.15); }
+
+/* Entrance animation */
+@keyframes fadeInUpTiny {
+    0% { opacity:0; transform: translateY(8px); }
+    100% { opacity:1; transform: translateY(0); }
+}
+.reviews-section .review-card { animation: fadeInUpTiny 700ms ease both; }
+
+/* Responsive: show fewer slides */
+@media (max-width: 1023px) {
+    .review-slide { flex: 0 0 50%; }
+}
+@media (max-width: 767px) {
+    .reviews-section { padding: var(--spacing-md) 0; }
+    .review-slide { flex: 0 0 100%; }
+    .review-card { padding: 16px; }
+    .review-avatar { width:48px; height:48px; }
+    .reviews-controls { gap:8px; }
+    .reviews-prev, .reviews-next { width: 44px; height:44px; }
+}
+
+/* Small devices - tighten spacing */
+@media (max-width: 420px) {
+    .reviews-slider { gap: 12px; }
+    .review-card { padding: 12px; }
+    .review-avatar { width:40px; height:40px; font-size:0.9rem; }
+    .review-meta strong { font-size: 0.95rem; }
+}
+
+/* === WHATSAPP FLOAT BUTTON === */
+.whatsapp-float {
+    position: fixed;
+    right: 18px;
+    /* placed above the scroll-to-top button */
+    bottom: 96px;
+        width: 56px;
+        height: 56px;
+        background: #25D366; /* WhatsApp green */
+        color: #fff;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 22px rgba(37,211,102,0.18);
+        z-index: 9999;
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        text-decoration: none;
+}
+.whatsapp-float:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 14px 30px rgba(37,211,102,0.22); }
+.whatsapp-float:active { transform: translateY(-1px) scale(0.99); }
+.whatsapp-float .wa-icon { width: 22px; height: 22px; display:block; }
+
+/* subtle pulse */
+@keyframes waPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.25); }
+    70% { box-shadow: 0 0 0 10px rgba(37,211,102,0.02); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+.whatsapp-float::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; animation: waPulse 2.8s infinite; pointer-events: none; }
+
+@media (max-width: 520px) {
+    /* slightly above the back-to-top on small screens */
+    .whatsapp-float { right: 14px; bottom: 78px; width: 52px; height: 52px; }
 }
 
 .hero-title {
@@ -598,12 +726,16 @@ p {
 
 .category-card {
     background: var(--white);
-    padding: var(--spacing-lg);
+    padding: 0;
     border-radius: var(--radius-lg);
     text-align: center;
     border: 2px solid var(--border-color);
     transition: all var(--transition-normal);
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 260px;
 }
 
 .category-card:hover {
@@ -613,42 +745,44 @@ p {
 }
 
 .category-image {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    display: block;
     background: var(--light-bg);
-    border-radius: 50%;
     transition: var(--transition-normal);
+    overflow: hidden;
 }
 
 .category-card:hover .category-image {
-    background: var(--gradient-primary);
+    /* subtle tint when hovering */
+    filter: brightness(0.98) saturate(1.05);
 }
 
 .category-image img {
-    width: 40px;
-    height: 40px;
-    transition: var(--transition-normal);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s var(--transition-normal);
 }
 
 .category-card:hover .category-image img {
-    filter: brightness(0) invert(1);
-    transform: scale(1.1);
+    transform: scale(1.50);
 }
 
 .category-card h3 {
     font-size: 1.25rem;
-    margin-bottom: 0.25rem;
+    margin: 0 0 0.25rem 0;
     color: var(--text-dark);
+    padding: 20px;
 }
 
 .category-card p {
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     color: var(--text-light);
-    margin: 0;
+    margin: 0 0 var(--spacing-lg) 0;
+    padding: 0 20px;
 }
 
 /* === FEATURED PRODUCTS SECTION === */
@@ -826,7 +960,7 @@ p {
 }
 
 .footer-logo img {
-    height: 50px;
+    height: 80px;
 }
 
 .footer-logo h3 {
@@ -1069,4 +1203,13 @@ p {
 .scroll-to-top:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl);
+}
+
+/* Shift scroll button when whatsapp float is present to avoid overlap */
+.has-whatsapp .scroll-to-top {
+        right: 96px; /* move left so it's not covered by whatsapp float */
+}
+
+@media (max-width: 520px) {
+    .has-whatsapp .scroll-to-top { right: 78px; }
 }
