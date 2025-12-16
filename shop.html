@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Shop African Groceries | SKYE African Supermarket UK</title>
+    <meta name="description" content="Browse our extensive collection of authentic African groceries, fresh produce, exotic spices, and traditional foods. Over 500 products available for delivery across UK.">
+    <meta name="keywords" content="buy African food online UK, African groceries shop, African food delivery, tropical food store, African spices online, ethnic food shopping">
+    <meta name="author" content="SKYE African Supermarket">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Shop African Groceries | SKYE African Supermarket">
+    <meta property="og:description" content="Browse over 500 authentic African products. Fresh produce, exotic spices, and traditional foods delivered to your door.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.skyeafricansupermarket.com/shop.html">
+    <meta property="og:image" content="images/hero-banner.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shop African Groceries | SKYE African Supermarket">
+    <meta name="twitter:description" content="Browse over 500 authentic African products with fast UK delivery.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.skyeafricansupermarket.com/shop.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Shop African Groceries",
+        "description": "Browse our collection of authentic African groceries and products",
+        "url": "https://www.skyeafricansupermarket.com/shop.html",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.skyeafricansupermarket.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Shop",
+                    "item": "https://www.skyeafricansupermarket.com/shop.html"
+                }
+            ]
+        }
+    }
+    </script>
+</head>
+<body>
+    
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="SKYE African Supermarket Logo">
+                        <span class="logo-text">SKYE<br><small>African Supermarket</small></span>
+                    </a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <!-- Cart & Mobile Menu -->
+                <div class="nav-actions">
+                    <a href="#" class="cart-icon" aria-label="Shopping Cart" onclick="event.preventDefault(); openCartModal();">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content fade-in-up">
+                <h1>Shop African Groceries</h1>
+                <p>Discover over 500 authentic products from across Africa</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Shop</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                
+                <!-- Sidebar Filters -->
+                <aside class="shop-sidebar">
+                    <button class="sidebar-close" aria-label="Close filters">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="sidebar-widget fade-in-left">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-search"></i> Search Products</h3>
+                        </div>
+                        <div class="sidebar-content">
+                            <div class="search-box">
+                                <input type="text" 
+                                       id="searchInput" 
+                                       placeholder="Search products..." 
+                                       aria-label="Search products">
+                                <button onclick="searchProducts()" aria-label="Search">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget fade-in-left" data-delay="0.1">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-filter"></i> Categories</h3>
+                            <button class="clear-filters" onclick="clearFilters()">Clear All</button>
+                        </div>
+                        <div class="sidebar-content">
+                            <div class="category-filters" id="categoryFilters">
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="all" checked>
+                                    <span>All Products</span>
+                                    <span class="filter-count" id="count-all">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="fresh-produce">
+                                    <span>Fresh Produce</span>
+                                    <span class="filter-count" id="count-produce">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="meat-poultry">
+                                    <span>Meat & Poultry</span>
+                                    <span class="filter-count" id="count-meat">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="seafood">
+                                    <span>Seafood</span>
+                                    <span class="filter-count" id="count-seafood">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="dairy-eggs">
+                                    <span>Dairy & Eggs</span>
+                                    <span class="filter-count" id="count-dairy">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="bakery">
+                                    <span>Bakery</span>
+                                    <span class="filter-count" id="count-bakery">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="frozen-foods">
+                                    <span>Frozen Foods</span>
+                                    <span class="filter-count" id="count-frozen">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="beverages">
+                                    <span>Beverages</span>
+                                    <span class="filter-count" id="count-beverages">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="snacks">
+                                    <span>Snacks & Confectionery</span>
+                                    <span class="filter-count" id="count-snacks">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="pantry">
+                                    <span>Pantry Staples</span>
+                                    <span class="filter-count" id="count-pantry">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="health-beauty">
+                                    <span>Health & Beauty</span>
+                                    <span class="filter-count" id="count-health">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="household">
+                                    <span>Household & Cleaning</span>
+                                    <span class="filter-count" id="count-household">0</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="baby-products">
+                                    <span>Baby Products</span>
+                                    <span class="filter-count" id="count-baby">0</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget fade-in-left" data-delay="0.2">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-tag"></i> Price Range</h3>
+                        </div>
+                        <div class="sidebar-content">
+                            <div class="price-filter">
+                                <div class="price-inputs">
+                                    <input type="number" id="minPrice" placeholder="Min" min="0" step="0.50" aria-label="Minimum price">
+                                    <span>-</span>
+                                    <input type="number" id="maxPrice" placeholder="Max" min="0" step="0.50" aria-label="Maximum price">
+                                </div>
+                                <button class="btn btn-primary btn-small" onclick="applyPriceFilter()">
+                                    Apply
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget fade-in-left" data-delay="0.3">
+                        <div class="sidebar-header">
+                            <h3><i class="fas fa-box"></i> Availability</h3>
+                        </div>
+                        <div class="sidebar-content">
+                            <label class="filter-option">
+                                <input type="checkbox" id="inStockOnly">
+                                <span>In Stock Only</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Filter Toggle -->
+                    <button class="mobile-filter-toggle" onclick="toggleMobileFilters()">
+                        <i class="fas fa-filter"></i> Filters
+                    </button>
+                </aside>
+                
+                <!-- Products Grid -->
+                <main class="shop-main">
+                    <div class="shop-toolbar fade-in-up">
+                        <div class="toolbar-left">
+                            <p class="results-count">
+                                Showing <span id="resultCount">0</span> products
+                            </p>
+                        </div>
+                        <div class="toolbar-right">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect" onchange="sortProducts(this.value)" aria-label="Sort products">
+                                <option value="default">Default</option>
+                                <option value="name-asc">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="price-asc">Price (Low to High)</option>
+                                <option value="price-desc">Price (High to Low)</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" onclick="changeView('grid')" aria-label="Grid view">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" onclick="changeView('list')" aria-label="List view">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="productsGrid" class="products-grid">
+                        <!-- Products will be loaded here dynamically -->
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                            <p>Loading products...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- No Results Message -->
+                    <div id="noResults" class="no-results" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters or search terms</p>
+                        <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div id="pagination" class="pagination" style="display: none;">
+                        <button class="pagination-btn" id="prevPage" onclick="previousPage()" disabled>
+                            <i class="fas fa-chevron-left"></i> Previous
+                        </button>
+                        <div class="pagination-pages" id="paginationPages">
+                            <!-- Page numbers will be inserted here -->
+                        </div>
+                        <button class="pagination-btn" id="nextPage" onclick="nextPage()">
+                            Next <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="SKYE African Supermarket">
+                        <h3>SKYE African Supermarket</h3>
+                    </div>
+                    <p>Your trusted source for authentic African groceries and traditional foods in the UK.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="shop.html?category=fresh-produce">Fresh Produce</a></li>
+                        <li><a href="shop.html?category=meat-poultry">Meat & Poultry</a></li>
+                        <li><a href="shop.html?category=beverages">Beverages</a></li>
+                        <li><a href="shop.html?category=pantry">Pantry Staples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>United Kingdom</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+44 XXX XXX XXXX</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@skyeafricansupermarket.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Sun: 8:00 AM - 10:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 SKYE African Supermarket. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>

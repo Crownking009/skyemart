@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Admin Dashboard | SKYE African Supermarket</title>
+    <meta name="description" content="Manage products, inventory, and orders for SKYE African Supermarket.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-dashboard-body">
+    
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-sidebar-header">
+            <img src="images/logo.png" alt="SKYE Logo" class="sidebar-logo">
+            <div class="sidebar-brand">
+                <h2>SKYE</h2>
+                <p>Admin Panel</p>
+            </div>
+        </div>
+        
+        <nav class="admin-nav">
+            <a href="#dashboard" class="admin-nav-link active" onclick="showSection('dashboard')">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#products" class="admin-nav-link" onclick="showSection('products')">
+                <i class="fas fa-box"></i>
+                <span>Products</span>
+            </a>
+            <a href="#add-product" class="admin-nav-link" onclick="showSection('add-product')">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add Product</span>
+            </a>
+            <a href="#categories" class="admin-nav-link" onclick="showSection('categories')">
+                <i class="fas fa-tags"></i>
+                <span>Categories</span>
+            </a>
+            <a href="index.html" class="admin-nav-link" target="_blank">
+                <i class="fas fa-globe"></i>
+                <span>View Website</span>
+            </a>
+        </nav>
+        
+        <div class="admin-sidebar-footer">
+            <button class="btn-logout" onclick="handleLogout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+    
+    <!-- Admin Main Content -->
+    <main class="admin-main">
+        
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <button class="mobile-sidebar-toggle" id="mobileSidebarToggle" aria-label="Toggle sidebar menu" title="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="admin-header-content">
+                <h1 id="pageTitle">Dashboard</h1>
+                <div class="admin-user-info">
+                    <span class="admin-username">
+                        <i class="fas fa-user-circle"></i>
+                        Admin
+                    </span>
+                    <button class="btn-logout-mobile" onclick="handleLogout()" aria-label="Logout" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="admin-section active">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up" data-delay="0.1">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalProducts">0</h3>
+                        <p>Total Products</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in-up" data-delay="0.2">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="inStockProducts">0</h3>
+                        <p>In Stock</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in-up" data-delay="0.3">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="outOfStockProducts">0</h3>
+                        <p>Out of Stock</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in-up" data-delay="0.4">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 id="totalCategories">12</h3>
+                        <p>Categories</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-card fade-in-up" data-delay="0.5">
+                    <h2><i class="fas fa-chart-bar"></i> Quick Actions</h2>
+                    <div class="quick-actions">
+                        <button class="quick-action-btn" onclick="showSection('add-product')">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Add New Product</span>
+                        </button>
+                        <button class="quick-action-btn" onclick="showSection('products')">
+                            <i class="fas fa-edit"></i>
+                            <span>Manage Products</span>
+                        </button>
+                        <button class="quick-action-btn" onclick="showSection('categories')">
+                            <i class="fas fa-tags"></i>
+                            <span>Manage Categories</span>
+                        </button>
+                        <button class="quick-action-btn" onclick="exportProducts()">
+                            <i class="fas fa-download"></i>
+                            <span>Export Products</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Products Section -->
+        <section id="products-section" class="admin-section">
+            <div class="section-header">
+                <h2><i class="fas fa-box"></i> Manage Products</h2>
+                <div class="section-actions">
+                    <input type="text" id="searchProducts" placeholder="Search products..." class="search-input" aria-label="Search products" title="Search products">
+                    <select id="filterCategory" onchange="filterProductsByCategory()" class="filter-select" aria-label="Filter by category" title="Filter by category">
+                        <option value="all">All Categories</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="products-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Unit</th>
+                            <th>Stock</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <tr>
+                            <td colspan="7" class="loading-cell">
+                                <i class="fas fa-spinner fa-spin"></i> Loading products...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="noProductsMessage" class="no-data-message" style="display: none;">
+                <i class="fas fa-box-open"></i>
+                <h3>No Products Found</h3>
+                <p>Start by adding your first product!</p>
+                <button class="btn btn-primary" onclick="showSection('add-product')">
+                    <i class="fas fa-plus-circle"></i> Add Product
+                </button>
+            </div>
+        </section>
+        
+        <!-- Add/Edit Product Section -->
+        <section id="add-product-section" class="admin-section">
+            <div class="section-header">
+                <h2><i class="fas fa-plus-circle"></i> <span id="formTitle">Add New Product</span></h2>
+            </div>
+            
+            <form id="productForm" class="product-form" onsubmit="handleProductSubmit(event)">
+                <input type="hidden" id="productId" name="productId">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productName">Product Name <span class="required">*</span></label>
+                        <input type="text" id="productName" name="productName" required placeholder="e.g., Fresh Plantain">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productCategory">Category <span class="required">*</span></label>
+                        <select id="productCategory" name="productCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="fresh-produce">Fresh Produce</option>
+                            <option value="meat-poultry">Meat & Poultry</option>
+                            <option value="seafood">Seafood</option>
+                            <option value="dairy-eggs">Dairy & Eggs</option>
+                            <option value="bakery">Bakery</option>
+                            <option value="frozen-foods">Frozen Foods</option>
+                            <option value="beverages">Beverages</option>
+                            <option value="snacks">Snacks & Confectionery</option>
+                            <option value="pantry">Pantry Staples</option>
+                            <option value="health-beauty">Health & Beauty</option>
+                            <option value="household">Household & Cleaning</option>
+                            <option value="baby-products">Baby Products</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice">Price (£) <span class="required">*</span></label>
+                        <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" required placeholder="0.00">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productUnit">Unit/Size</label>
+                        <input type="text" id="productUnit" name="productUnit" placeholder="e.g., 1kg, 500ml">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productStock">Stock Status <span class="required">*</span></label>
+                        <select id="productStock" name="productStock" required aria-label="Stock status" title="Select stock status">
+                            <option value="In Stock">In Stock</option>
+                            <option value="Out of Stock">Out of Stock</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productImage">Product Image</label>
+                        <input type="file" id="productImage" name="productImage" accept="image/*" onchange="previewImage(event)" aria-label="Upload product image" title="Upload product image">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" name="productDescription" rows="4" placeholder="Product description (optional)"></textarea>
+                </div>
+                
+                <div class="image-preview-container" id="imagePreviewContainer" style="display: none;">
+                    <img id="imagePreview" src="" alt="Product image preview">
+                    <button type="button" class="remove-image-btn" onclick="removeImagePreview()" aria-label="Remove image" title="Remove image">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="resetForm()" title="Cancel and clear form">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary" title="Save product">
+                        <i class="fas fa-save"></i> <span id="submitBtnText">Save Product</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+        
+        <!-- Categories Section -->
+        <section id="categories-section" class="admin-section">
+            <div class="section-header">
+                <h2><i class="fas fa-tags"></i> Product Categories</h2>
+            </div>
+            
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be loaded here -->
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-overlay" onclick="closeDeleteModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Confirm Delete</h3>
+                <button class="modal-close" onclick="closeDeleteModal()" aria-label="Close modal" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this product?</p>
+                <p class="modal-warning">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeDeleteModal()" title="Cancel deletion">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDelete()" title="Confirm and delete product">
+                    <i class="fas fa-trash"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/admin-auth.js"></script>
+    <script src="js/admin-products.js"></script>
+    <script src="js/image-upload.js"></script>
+</body>
+</html>
