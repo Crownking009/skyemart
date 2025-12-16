@@ -319,6 +319,37 @@
     .category-card p {
         font-size: 0.75rem;
     }
+
+    /* Ensure category cards on small screens use image-top layout */
+    @media (max-width: 767px) {
+        .categories-grid { grid-template-columns: 1fr; }
+        .category-card {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 220px;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+        .category-image {
+            width: 100%;
+            height: 50%;
+            margin: 0;
+            background: var(--light-bg);
+        }
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .category-card h3 {
+             padding: var(--spacing-md);
+              margin: 0 0 0.25rem 0; }
+        .category-card p {
+            
+             margin: 0; font-size: 0.95rem; }
+    }
     
     /* === FEATURED PRODUCTS === */
     .featured-products {
@@ -4033,4 +4064,14 @@
     .hero-title { font-size: 1.6rem; }
     .hero-description { font-size: 0.9rem; }
     .hero-controls { bottom: 10px; }
+}
+
+/* Final override: ensure category image-top layout on small screens (placed at file end to win cascade) */
+@media (max-width: 767px) {
+    .categories-grid { grid-template-columns: 1fr !important; }
+    .category-card { display:flex !important; flex-direction:column !important; padding:0 !important; min-height:220px !important; overflow:hidden !important; }
+    .category-image { width:100% !important; height:50% !important; margin:0 !important; background:var(--light-bg) !important; }
+    .category-image img { width:100% !important; height:100% !important; object-fit:cover !important; display:block !important; }
+    .category-card h3 { padding: var(--spacing-md) !important; margin: 0 0 0.25rem 0 !important; }
+    .category-card p { padding: 0 var(--spacing-md) var(--spacing-md) !important; margin:0 !important; font-size:0.95rem !important; }
 }

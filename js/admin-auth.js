@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isAuthenticated()) {
             window.location.href = 'admin-dashboard.html';
         }
+        
+        // Setup login form event listener
+        const loginForm = document.getElementById('adminLoginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', handleLogin);
+        }
     }
     
     // Setup mobile sidebar toggle
@@ -37,17 +43,25 @@ document.addEventListener('DOMContentLoaded', function() {
 // HANDLE LOGIN
 // ============================================
 function handleLogin(event) {
+    console.log('Login function called!'); // Debug log
+    
     event.preventDefault();
+    event.stopPropagation();
     
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
     const rememberMe = document.getElementById('rememberMe').checked;
+    
+    console.log('Username:', username); // Debug log
+    console.log('Expected:', ADMIN_CREDENTIALS.username); // Debug log
     
     // Clear previous errors
     hideLoginError();
     
     // Validate credentials
     if (username === ADMIN_CREDENTIALS.username && password === ADMIN_CREDENTIALS.password) {
+        console.log('Login successful!'); // Debug log
+        
         // Create session
         const session = {
             username: username,
@@ -71,14 +85,20 @@ function handleLogin(event) {
         }, 1000);
         
     } else {
+        console.log('Login failed - invalid credentials'); // Debug log
+        
         // Show error
         showLoginError('Invalid username or password');
         
         // Shake animation
         const loginCard = document.querySelector('.admin-login-card');
-        loginCard.classList.add('shake');
-        setTimeout(() => loginCard.classList.remove('shake'), 500);
+        if (loginCard) {
+            loginCard.classList.add('shake');
+            setTimeout(() => loginCard.classList.remove('shake'), 500);
+        }
     }
+    
+    return false;
 }
 
 // ============================================

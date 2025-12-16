@@ -172,11 +172,17 @@
     gap: 0.5rem;
     transition: var(--transition-normal);
     box-shadow: var(--shadow-md);
+    pointer-events: auto;
+    z-index: 10;
 }
 
 .btn-login:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.btn-login:active {
+    transform: translateY(0);
 }
 
 /* Login Footer */
